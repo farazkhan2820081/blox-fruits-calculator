@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blox Fruits Damage Calculator - Calculate DPS & Damage Output</title>
+    <meta name="description" content="Calculate exact damage output for Blox Fruits abilities, weapons, and combos. Optimize your DPS for PvP and PvE combat.">
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>🏴‍☠️</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="damage-calculator.html" class="nav-link active">Damage Calculator</a></li>
+                    <li><a href="tier-list.html" class="nav-link">Tier List</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main style="padding-top: 100px;">
+        <section class="calculator-section">
+            <div class="container">
+                <h1>Blox Fruits Damage Calculator</h1>
+                <p>Calculate precise damage output for fruits, weapons, and abilities. Perfect for optimizing your combat effectiveness.</p>
+                
+                <div class="calculator-container">
+                    <div class="calculator-inputs">
+                        <div class="input-group">
+                            <label for="weaponType">Weapon/Ability Type:</label>
+                            <select id="weaponType">
+                                <option value="fruit">Fruit Ability</option>
+                                <option value="sword">Sword</option>
+                                <option value="melee">Melee/Fighting Style</option>
+                                <option value="gun">Gun</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="baseDamage">Base Damage:</label>
+                            <input type="number" id="baseDamage" min="1" max="10000" value="1000" placeholder="Enter base damage">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="statPoints">Relevant Stat Points:</label>
+                            <input type="number" id="statPoints" min="0" max="2550" value="2550" placeholder="Enter stat points">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="targetDefense">Target Defense:</label>
+                            <input type="number" id="targetDefense" min="0" max="2550" value="0" placeholder="Enemy defense points">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="awakeningBonus">Awakening Bonus (%):</label>
+                            <input type="number" id="awakeningBonus" min="0" max="100" value="0" placeholder="Awakening damage bonus">
+                        </div>
+                        
+                        <button onclick="calculateDamage()" class="btn btn-primary">Calculate Damage</button>
+                    </div>
+                    
+                    <div class="calculator-results">
+                        <h3>Damage Calculation Results</h3>
+                        <div id="damageResults" class="results-container">
+                            <div class="damage-item">
+                                <span class="damage-label">Raw Damage:</span>
+                                <span class="damage-value" id="rawDamage">0</span>
+                            </div>
+                            <div class="damage-item">
+                                <span class="damage-label">With Stats:</span>
+                                <span class="damage-value" id="statDamage">0</span>
+                            </div>
+                            <div class="damage-item">
+                                <span class="damage-label">After Defense:</span>
+                                <span class="damage-value" id="finalDamage">0</span>
+                            </div>
+                            <div class="damage-item">
+                                <span class="damage-label">Critical Hit:</span>
+                                <span class="damage-value" id="critDamage">0</span>
+                            </div>
+                        </div>
+                        
+                        <div class="build-summary">
+                            <h4>Damage Analysis</h4>
+                            <p id="damageAnalysis">Enter your weapon stats to see detailed damage calculations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Blox Fruits Calculator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function calculateDamage() {
+            const weaponType = document.getElementById('weaponType').value;
+            const baseDamage = parseFloat(document.getElementById('baseDamage').value) || 1000;
+            const statPoints = parseFloat(document.getElementById('statPoints').value) || 2550;
+            const targetDefense = parseFloat(document.getElementById('targetDefense').value) || 0;
+            const awakeningBonus = parseFloat(document.getElementById('awakeningBonus').value) || 0;
+            
+            // Calculate stat multiplier (simplified formula)
+            const statMultiplier = 1 + (statPoints / 2550) * 2;
+            
+            // Calculate raw damage with stats
+            const rawDamage = baseDamage;
+            const statDamage = baseDamage * statMultiplier;
+            
+            // Apply awakening bonus
+            const awakenedDamage = statDamage * (1 + awakeningBonus / 100);
+            
+            // Calculate defense reduction
+            const defenseReduction = 1 - (targetDefense / (targetDefense + 2550));
+            const finalDamage = awakenedDamage * defenseReduction;
+            
+            // Calculate critical hit damage (1.5x multiplier)
+            const critDamage = finalDamage * 1.5;
+            
+            // Update UI
+            document.getElementById('rawDamage').textContent = Math.round(rawDamage);
+            document.getElementById('statDamage').textContent = Math.round(statDamage);
+            document.getElementById('finalDamage').textContent = Math.round(finalDamage);
+            document.getElementById('critDamage').textContent = Math.round(critDamage);
+            
+            // Update analysis
+            let analysis = `Your ${weaponType} deals ${Math.round(finalDamage)} damage with ${statPoints} stat points. `;
+            analysis += `Stat multiplier: ${statMultiplier.toFixed(2)}x. `;
+            if (awakeningBonus > 0) {
+                analysis += `Awakening bonus: +${awakeningBonus}%. `;
+            }
+            if (targetDefense > 0) {
+                analysis += `Defense reduction: ${(defenseReduction * 100).toFixed(1)}%.`;
+            }
+            
+            document.getElementById('damageAnalysis').textContent = analysis;
+        }
+        
+        // Auto-calculate when inputs change
+        document.querySelectorAll('#weaponType, #baseDamage, #statPoints, #targetDefense, #awakeningBonus').forEach(input => {
+            input.addEventListener('change', calculateDamage);
+        });
+        
+        // Calculate initial damage
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(calculateDamage, 100);
+        });
+    </script>
+</body>
+</html>
