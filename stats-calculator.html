@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blox Fruits Stats Calculator - Optimize Your Build</title>
+    <meta name="description" content="Advanced Blox Fruits stats calculator for optimal stat distribution. Calculate perfect builds for PvP, PvE, and raids.">
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>🏴‍☠️</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="stats-calculator.html" class="nav-link active">Stats Calculator</a></li>
+                    <li><a href="tier-list.html" class="nav-link">Tier List</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main style="padding-top: 100px;">
+        <section id="calculator" class="calculator-section">
+            <div class="container">
+                <h1>Blox Fruits Stats Calculator</h1>
+                <p>Calculate your optimal stat distribution for maximum damage and survivability. Our calculator considers your fruit type, level, and playstyle preferences.</p>
+                
+                <div class="calculator-container">
+                    <div class="calculator-inputs">
+                        <div class="input-group">
+                            <label for="playerLevel">Player Level:</label>
+                            <input type="number" id="playerLevel" min="1" max="2550" value="2550" placeholder="Enter your level">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="fruitType">Fruit Type:</label>
+                            <select id="fruitType">
+                                <option value="none">No Fruit</option>
+                                <option value="logia">Logia</option>
+                                <option value="paramecia">Paramecia</option>
+                                <option value="zoan">Zoan</option>
+                                <option value="mythical">Mythical Zoan</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="combatStyle">Combat Style:</label>
+                            <select id="combatStyle">
+                                <option value="fruit">Fruit Main</option>
+                                <option value="sword">Sword Main</option>
+                                <option value="melee">Melee Main</option>
+                                <option value="gun">Gun Main</option>
+                                <option value="hybrid">Hybrid</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="gameMode">Game Mode:</label>
+                            <select id="gameMode">
+                                <option value="pvp">PvP Focused</option>
+                                <option value="pve">PvE/Grinding</option>
+                                <option value="balanced">Balanced</option>
+                                <option value="raid">Raid Boss</option>
+                            </select>
+                        </div>
+                        
+                        <button onclick="calculateStats()" class="btn btn-primary">Calculate Optimal Build</button>
+                    </div>
+                    
+                    <div class="calculator-results">
+                        <h3>Recommended Stat Distribution</h3>
+                        <div id="results" class="results-container">
+                            <div class="stat-item">
+                                <span class="stat-name">Melee:</span>
+                                <span class="stat-value" id="meleePoints">0</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill melee-fill" id="meleeFill"></div>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-name">Defense:</span>
+                                <span class="stat-value" id="defensePoints">0</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill defense-fill" id="defenseFill"></div>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-name">Sword:</span>
+                                <span class="stat-value" id="swordPoints">0</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill sword-fill" id="swordFill"></div>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-name">Gun:</span>
+                                <span class="stat-value" id="gunPoints">0</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill gun-fill" id="gunFill"></div>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-name">Fruit:</span>
+                                <span class="stat-value" id="fruitPoints">0</span>
+                                <div class="stat-bar">
+                                    <div class="stat-fill fruit-fill" id="fruitFill"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="build-summary">
+                            <h4>Build Summary</h4>
+                            <p id="buildDescription">Select your preferences and click calculate to see your optimal build.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Blox Fruits Calculator</h3>
+                    <p>The ultimate destination for Blox Fruits optimization tools and calculators.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Blox Fruits Calculator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
