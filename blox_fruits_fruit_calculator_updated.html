@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blox Fruits Fruit Calculator 2025 - Calculate Your Damage Output</title>
+    <meta name="description" content="Calculate your Blox Fruits damage output based on your fruit type, stats, and level. Find the best combination for maximum damage.">
+    <meta name="keywords" content="Blox Fruits fruit calculator, calculate damage in Blox Fruits, fruit damage calculator, best fruit in Blox Fruits">
+    <meta name="author" content="Blox Fruits Calculator">
+    <meta name="robots" content="index, follow">
+    <link href="style.css" rel="stylesheet" type="text/css">
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I use the Fruit Calculator in Blox Fruits?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Simply select your fruit type, enter your level and stats, and hit the calculate button. The calculator will show you the expected damage output based on your inputs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which fruits are best for high damage output?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Fruits like Dough, Venom, and Light are great for high damage output in both PvP and PvE content."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>🏴‍☠️ Blox Fruits Calculator</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="tier-list.html" class="nav-link">Tier List</a></li>
+                    <li><a href="spawn-locations.html" class="nav-link">Spawn Locations</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="beginner-guide.html" class="nav-link">Beginner Guide</a></li>
+                    <li><a href="leveling-calculator.html" class="nav-link">Leveling Calculator</a></li>
+                    <li><a href="fruit-calculator.html" class="nav-link active">Fruit Calculator</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main style="padding-top: 100px;">
+        <section class="content-section">
+            <div class="container">
+                <article class="main-content">
+                    <h1>Blox Fruits Fruit Calculator 2025</h1>
+                    <p>Welcome to the Blox Fruits Fruit Calculator! This tool allows you to calculate the damage output based on your fruit type, level, and combat stats. Whether you're optimizing for PvP or PvE, this calculator helps you find the best combination for maximum damage.</p>
+
+                    <h2>Enter Your Information</h2>
+                    <div class="calculator-container">
+                        <div class="calculator-inputs">
+                            <div class="input-group">
+                                <label for="fruitType">Fruit Type:</label>
+                                <select id="fruitType">
+                                    <option value="none">No Fruit</option>
+                                    <option value="light">Light</option>
+                                    <option value="venom">Venom</option>
+                                    <option value="magma">Magma</option>
+                                    <option value="dough">Dough</option>
+                                    <option value="dark">Dark</option>
+                                    <option value="ice">Ice</option>
+                                </select>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="playerLevel">Player Level:</label>
+                                <input type="number" id="playerLevel" min="1" max="2550" value="1" placeholder="Enter your level">
+                            </div>
+
+                            <div class="input-group">
+                                <label for="combatStyle">Combat Style:</label>
+                                <select id="combatStyle">
+                                    <option value="fruit">Fruit Main</option>
+                                    <option value="sword">Sword Main</option>
+                                    <option value="melee">Melee Main</option>
+                                    <option value="gun">Gun Main</option>
+                                    <option value="hybrid">Hybrid</option>
+                                </select>
+                            </div>
+
+                            <button onclick="calculateDamage()" class="btn btn-primary">Calculate Damage</button>
+                        </div>
+
+                        <div class="calculator-results" id="results" style="display:none;">
+                            <h3>Calculated Damage Output</h3>
+                            <p id="damageOutput"></p>
+                        </div>
+
+                        <div class="fruit-details" id="fruitDetails" style="margin-top:20px;">
+                            <h3>Fruit Details</h3>
+                            <p>Select a fruit to see its abilities, strengths, and weaknesses.</p>
+                        </div>
+                    </div>
+
+                    <h2>Conclusion</h2>
+                    <p>With this calculator, you can optimize your fruit and stats for maximum damage output. Use it to fine-tune your build and improve your performance in Blox Fruits. Happy calculating!</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Blox Fruits Calculator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="fruit_calculator_logic.js"></script>
+</body>
+</html>
