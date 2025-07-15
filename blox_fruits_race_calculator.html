@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blox Fruits Race Calculator</title>
+    <meta name="description" content="Calculate your race bonuses in Blox Fruits. Find out which race gives you the best stat boosts and abilities for your playstyle.">
+    <meta name="keywords" content="Blox Fruits race calculator, race bonuses, race stats, Blox Fruits race abilities">
+    <meta name="author" content="Blox Fruits Calculator">
+    <link href="style.css" rel="stylesheet" type="text/css">
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Which is the best race in Blox Fruits?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The best race depends on your playstyle. **Mink** is great for speed, **Cyborg** offers defensive boosts, and **Fishman** gives significant stamina bonuses."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I calculate race bonuses in Blox Fruits?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The race bonuses are calculated based on the selected race, which provides unique boosts such as enhanced stats or abilities. This calculator helps you find out what bonuses you get based on your race choice."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1>🏴‍☠️ Blox Fruits Calculator</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="tier-list.html" class="nav-link">Tier List</a></li>
+                    <li><a href="spawn-locations.html" class="nav-link">Spawn Locations</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="beginner-guide.html" class="nav-link">Beginner Guide</a></li>
+                    <li><a href="leveling-calculator.html" class="nav-link">Leveling Calculator</a></li>
+                    <li><a href="fruit-notifier.html" class="nav-link">Fruit Notifier</a></li>
+                    <li><a href="race-calculator.html" class="nav-link active">Race Calculator</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main style="padding-top: 100px;">
+        <section class="content-section">
+            <div class="container">
+                <article class="main-content">
+                    <h1>Blox Fruits Race Calculator</h1>
+                    <p>Welcome to the **Race Calculator** for Blox Fruits! Use this tool to calculate your **race bonuses** and see how different races in the game affect your stats and abilities.</p>
+
+                    <h2>Select Your Race</h2>
+                    <div class="calculator-container">
+                        <div class="calculator-inputs">
+                            <div class="input-group">
+                                <label for="raceSelect">Race Type:</label>
+                                <select id="raceSelect">
+                                    <option value="none">Select a Race</option>
+                                    <option value="human">Human</option>
+                                    <option value="fishman">Fishman</option>
+                                    <option value="mink">Mink</option>
+                                    <option value="cyborg">Cyborg</option>
+                                    <option value="skypiean">Skypiean</option>
+                                    <option value="longma">Longma</option>
+                                </select>
+                            </div>
+
+                            <button onclick="calculateRaceBonuses()" class="btn btn-primary">Calculate Race Bonuses</button>
+                        </div>
+
+                        <div class="results-container" id="raceResults" style="display:none;">
+                            <h3>Race Bonuses</h3>
+                            <p id="raceBonus"></p>
+                            <p id="raceAbilities"></p>
+                        </div>
+                    </div>
+
+                    <h2>Race Details</h2>
+                    <p id="raceDetails">Select a race to see detailed bonuses and abilities associated with it.</p>
+
+                    <h2>FAQ</h2>
+                    <div class="faq-item">
+                        <h3>Which is the best race in Blox Fruits?</h3>
+                        <p>The best race depends on your playstyle. **Mink** is great for speed, **Cyborg** offers defensive boosts, and **Fishman** gives significant stamina bonuses.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How do I calculate race bonuses in Blox Fruits?</h3>
+                        <p>The race bonuses are calculated based on the selected race, which provides unique boosts such as enhanced stats or abilities. This calculator helps you find out what bonuses you get based on your race choice.</p>
+                    </div>
+
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Blox Fruits Calculator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="race_calculator_logic.js"></script>
+</body>
+</html>
