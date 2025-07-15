@@ -1,0 +1,181 @@
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2c2f3d;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #00e5ff;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #1a1c22;
+    padding: 15px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-menu {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: #fff;
+    padding: 10px 15px;
+    text-transform: uppercase;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: #00bcd4;
+    color: #1a1c22;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #1a1c22;
+    color: #bbb;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Calculator Section Styling */
+#calculator {
+    background-color: #353c49;
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+.calculator-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.calculator-inputs {
+    width: 45%;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+input[type="number"],
+select {
+    padding: 10px;
+    width: 100%;
+    margin-top: 5px;
+    background-color: #1f242f;
+    border: 1px solid #353c49;
+    color: #fff;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #00bcd4;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00e5ff;
+}
+
+/* Results Section Styling */
+.calculator-results {
+    width: 45%;
+    background-color: #353c49;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.stat-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #777;
+    border-radius: 5px;
+}
+
+.stat-fill {
+    height: 100%;
+    border-radius: 5px;
+}
+
+.melee-fill {
+    background-color: #ff5733;
+}
+
+.defense-fill {
+    background-color: #3498db;
+}
+
+.sword-fill {
+    background-color: #2ecc71;
+}
+
+.gun-fill {
+    background-color: #f39c12;
+}
+
+.fruit-fill {
+    background-color: #9b59b6;
+}
+
+.build-summary {
+    margin-top: 30px;
+}
+
+.build-summary h4 {
+    font-size: 1.4em;
+}
+
+.results-container {
+    margin-top: 20px;
+}
+
+.results-container .stat-value {
+    font-size: 1.3em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .calculator-container {
+        flex-direction: column;
+    }
+}
